@@ -1,27 +1,22 @@
 package com.tatolee.projectC.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@Slf4j
-public class boardController {
+public class HomeController {
 
+    //기본페이지로 들어오면 메인페이지로 이동
     @GetMapping("/")
     public String mainPage() {
+        System.out.println("mainpage");
         return "redirect:/board/main";
     }
 
+
+    //메인페이지
     @GetMapping("/board/main")
     public String homePage() {
         return "board/home";
-    }
-
-    @GetMapping("/board/freeboard")
-    public String freeView() {
-        log.info("free-board");
-        return "board/freeboard";
     }
 }
